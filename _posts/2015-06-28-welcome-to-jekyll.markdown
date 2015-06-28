@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Welcome to Jekyll!"
+author: Vincent Lesierse
 date:   2015-06-28 13:17:47
 categories: jekyll update
 ---
