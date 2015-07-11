@@ -1,6 +1,7 @@
 ---
 layout: page
 title: About
+cover: default.jpg
 permalink: /about/
 ---
 

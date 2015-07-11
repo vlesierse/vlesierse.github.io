@@ -10,6 +10,7 @@ layout: default
     </div>
     <h2>{{ page.title }}</h2>
     <p>{{ content }}</p>
+    
     {% if page.categories %}
     <div class="post-date">tags |
       <a href="">JavaScript</a>,
@@ -18,24 +19,20 @@ layout: default
       <span></span>
     </div>
     {% endif %}
+    
+    {% include post-share.html %}
+    
     {% if page.author %}
-    <ul class="social-links outline text-center">
-      <li>
-        <a href="#link"><i class="icon-twitter"></i></a>
-      </li>
-      <li>
-        <a href="#link"><i class="icon-facebook"></i></a>
-      </li>
-      <li>
-        <a href="#link"><i class="icon-googleplus"></i></a>
-      </li>
-    </ul>
     <div id="author" class="clearfix">
-      <img class="img-circle" alt="" src="img/author-sing.jpg" height="96" width="96">
+      <img class="img-circle" alt="" src="/assets/me.jpg" height="96" width="96">
       <div class="author-info">
         <h3>{{ page.author }}</h3>
+        <p>Vincent is principle software architect and technology enthusiast who loves to code and works at Exact.</p>
       </div>
     </div>
     {% endif %}
+    
+    {% include comments.html %}
+  
   </div>
 </div>
