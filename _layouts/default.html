@@ -2,6 +2,7 @@
 <html>
 
   {% include head.html %}
+  {% include google_analytics.html %}
 
   <body id="home">
     <div id="wrap">
@@ -22,6 +23,24 @@
 				</div>
 			</section>
       
+      <section id="breadcrumb">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-10 col-md-offset-1">
+							<ol class="breadcrumb">
+                {% if page.url != "/index.html" %}
+                <li><a href="/">Blog</a></li>
+                {% for path in page.parent_paths %}
+								<li><a href="{{ path }}">{{ page.parents[forloop.index0] }}</a></li>
+                {% endfor %}
+								<li class="active">{{ page.title }}</li>
+                {% endif %}
+							</ol>
+						</div>
+					</div>
+				</div>
+			</section>
+            
       <div id="start" class="container content">
         {{ content }}
       </div>

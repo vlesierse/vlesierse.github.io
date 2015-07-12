@@ -11,28 +11,13 @@ layout: default
     <h2>{{ page.title }}</h2>
     <p>{{ content }}</p>
     
-    {% if page.categories %}
-    <div class="post-date">tags |
-      <a href="">JavaScript</a>,
-      <a href="">jQuery</a>,
-      <a href="">Angular</a>
-      <span></span>
-    </div>
-    {% endif %}
+    {% include post-tags.html %}
     
     {% include post-share.html %}
     
-    {% if page.author %}
-    <div id="author" class="clearfix">
-      <img class="img-circle" alt="" src="/assets/me.jpg" height="96" width="96">
-      <div class="author-info">
-        <h3>{{ page.author }}</h3>
-        <p>Vincent is principle software architect and technology enthusiast who loves to code and works at Exact.</p>
-      </div>
-    </div>
-    {% endif %}
+    {% include post-author.html %}
     
-    {% include comments.html %}
+    {% include post-comments.html %}
   
   </div>
 </div>
