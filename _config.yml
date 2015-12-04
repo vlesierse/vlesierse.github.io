@@ -12,3 +12,6 @@ github_username:  vlesierse
 
 # Build settings
 markdown: kramdown
+
+gems:
+  - jekyll-feed

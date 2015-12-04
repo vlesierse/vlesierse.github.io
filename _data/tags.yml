@@ -1,3 +1,6 @@
 docker:
   slug: docker
   name: Docker
+aspnet5:
+  slug: aspnet5
+  name: ASP.NET 5
