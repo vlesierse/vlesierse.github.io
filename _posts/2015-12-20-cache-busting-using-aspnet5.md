@@ -50,8 +50,8 @@ Server:Kestrel
 ```
 
 ### E-Tag HTTP Header
-The problem with using ETags is that the browser will always ask the server if the resource is changed. If it is still the same it will response with a 304 status code.
-When the resource changes, the server with send an updated version with status code 200 and a new ETag header which will be store in the browser's cache.
+The problem with using ETags is that the browser will always ask the server if the resource is changed. If it is still the same, the server will response with a 304 status code.
+When the resource changes, the server sends an updated version with status code 200 and a new ETag header which will be stored in the browser's cache.
 Using ETags saves you the bytes going over the network to your users but it will not cut the amount of calls. ASP.NET 5 still have to handle all those request and checks if the files are changed.
 
 ### Add Cache-Control HTTP Header
