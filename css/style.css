@@ -98,7 +98,7 @@ pre {
 	position: relative;
 }
 .welcome-content {
-	min-height: 200px;
+	min-height: 100px;
 }
 #hero h1 {
 	 font-size: 45px; 
@@ -124,7 +124,7 @@ pre {
 }
 #hero .container {
 	display: table;
-	height: 300px;
+	height: 150px;
 }
 #hero #cover-image {
 	position: absolute;
@@ -1260,7 +1260,7 @@ footer .copyright {
 		 padding-left: 0; 
 	}
 	#hero .container {
-		height: 377px;
+		height: 127px;
 	}
 	.content {
 		line-height: 1.6;
@@ -1331,7 +1331,7 @@ footer .copyright {
 		 padding-left: 0; 
 	}
 	#hero .container {
-		height: 377px;
+		height: 127px;
 	}
 	.content {
 		line-height: 1.8;
