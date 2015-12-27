@@ -5,7 +5,7 @@ layout: default
 <div class="row">
     <div class="col-md-10 col-md-offset-1">
         {% if site.tags[page.tag] %}
-            {% for post in site.posts %}
+            {% for post in site.tags[page.tag] %}
             <article class="clearfix">
                 <div class="post-date">{{ post.date | date: "%b %-d, %Y" }} |
                     <a href="">Vincent Lesierse </a>

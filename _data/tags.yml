@@ -4,3 +4,6 @@ docker:
 aspnet5:
   slug: aspnet5
   name: ASP.NET 5
+servicefabric:
+  slug: servicefabric
+  name: Service Fabric
