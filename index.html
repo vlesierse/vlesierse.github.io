@@ -5,7 +5,7 @@ cover: default.jpg
 
 <div class="row">
   <div class="col-md-10 col-md-offset-1">
-    {% for post in site.posts %}
+    {% for post in paginator.posts %}
     <article class="clearfix">
       <div class="post-date">{{ post.date | date: "%b %-d, %Y" }} |
         <a href="">Vincent Lesierse </a>
