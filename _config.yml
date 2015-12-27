@@ -19,3 +19,6 @@ redcarpet:
 
 gems:
   - jekyll-feed
+
+paginate: 1
+

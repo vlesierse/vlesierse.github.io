@@ -44,8 +44,12 @@
       <div id="start" class="container content">
         {{ content }}
       </div>
-    
+      {% include footer.html %}
     </div>
+    <script type="text/javascript" src="{{ "/js/jquery-1.9.1.min.js" | prepend: site.baseurl }}"></script>
+    <script type="text/javascript" src="{{ "/js/bootstrap.min.js" | prepend: site.baseurl }}"></script>
+	<script type="text/javascript" src="{{ "/js/placeholders.min.js" | prepend: site.baseurl }}"></script>
+	<script type="text/javascript" src="{{ "/js/wow.min.js" | prepend: site.baseurl }}"></script>
+	<script type="text/javascript" src="{{ "/js/custom.js" | prepend: site.baseurl }}"></script>
   </body>
-
 </html>

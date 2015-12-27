@@ -98,7 +98,7 @@ pre {
 	position: relative;
 }
 .welcome-content {
-	min-height: 100px;
+	min-height: 200px;
 }
 #hero h1 {
 	 font-size: 45px; 
@@ -153,19 +153,19 @@ pre {
 }
 
 .image-bg {
-	background-image: url('../assets/bg.jpg');
+	background-image: url('../img/img5.jpg');
 }
 .image-bg2 {
-	background-image: url('../assets/bg2.jpg');
+	background-image: url('../img/img1.jpg');
 }
 .image-bg3 {
-	 background-image: url('../assets/bg3.jpg'); 
+	 background-image: url('../img/img4.jpg'); 
 }
 .image-bg4 {
-	background-image: url('../assets/bg4.jpg');  
+	background-image: url('../img/img7.jpg');  
 }
 .image-bg5 {
-	background-image: url('../assets/bg5.jpg');  
+	background-image: url('../img/img3.jpg');  
 }
 
 /* ------------------------ animations ------------------------ */
@@ -311,6 +311,7 @@ pre {
 	 margin-right: -15px;
 	 border: 0;
 	 color: #FFF;
+	 text-decoration: none;
 }
 .nav-icon i{
 	 font-size: 16px; 
@@ -323,6 +324,7 @@ pre {
 	background-color: #679E42;
 	color: #383838;
 	border: 0;
+	text-decoration: none;
 } 
 
 .nav-brand {
@@ -458,15 +460,16 @@ pre {
 	text-shadow: none;
 	color: #FFF;
 	opacity: 1;
-	position: absolute;
 	right: 0;
 	top: 0;
-	width: 55px;
 	border: 0;
+	position: absolute;
+	padding: 0;
+	width: 55px;
 }
-#menu .close-menu:hover,
-#menu .close-menu:focus{
-	background-color: #679E42;
+#menu>ul>li a.close-menu:hover,
+#menu>ul>li a.close-menu:focus{
+	background-color: #679E42!important;
 	color: #383838;
 } 
 #menu .close-menu i{
@@ -1260,7 +1263,7 @@ footer .copyright {
 		 padding-left: 0; 
 	}
 	#hero .container {
-		height: 127px;
+		height: 227px;
 	}
 	.content {
 		line-height: 1.6;
@@ -1331,7 +1334,7 @@ footer .copyright {
 		 padding-left: 0; 
 	}
 	#hero .container {
-		height: 127px;
+		height: 227px;
 	}
 	.content {
 		line-height: 1.8;

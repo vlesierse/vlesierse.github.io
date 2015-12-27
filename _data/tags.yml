@@ -1,9 +1,4 @@
-docker:
-  slug: docker
-  name: Docker
-aspnet5:
-  slug: aspnet5
+- slug: aspnet5
   name: ASP.NET 5
-servicefabric:
-  slug: servicefabric
+- slug: servicefabric
   name: Service Fabric

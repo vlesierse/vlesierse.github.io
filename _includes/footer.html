@@ -1,17 +1,58 @@
 <footer>
-  <div class="footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-4 col-md-4 footer-widget">
-          <h3>{{ site.title }}</h3>
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 col-md-4 footer-widget">
+                    <h3>Statistics</h3>
+                    <span>Let me show the numbers...</span>
+                    <div class="stats">
+                        <div class="line">
+                            <span class="counter">{{ site.posts | size }}</span>
+                            <span class="caption">Posts</span>
+                        </div>
+                        <div class="line">
+                            <span class="counter">{{ site.tags | size }}</span>
+                            <span class="caption">Tags</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-md-4 footer-widget">
+                    <h3>Recent posts</h3>
+                    <div class="post-recent-widget">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                {% for post in site.posts limit:3 %}
+                                <div class="media">
+                                    <div class="media-body">
+                                        <h4 class="media-heading"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h4>
+                                        <p class="post-date">{{ post.date | date: "%b %-d, %Y" }}</p>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 col-md-4 footer-widget clearfix">
+                    <h3>Tags</h3>
+                    <ul class="tags">
+                        {% for tag in site.data.tags %}
+                        <li><a href="/blog/tag/{{ tag.slug }}/">{{ tag["name"] }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="col-sm-4 col-md-4 footer-widget">
-          <h3>Recent posts</h3>
-        </div>
-        <div class="col-sm-4 col-md-4 footer-widget clearfix">
-          <h3>Tags</h3>
-        </div>
-      </div>
     </div>
-  </div>
+    <div class="copyright">
+        <div class="container">
+            <p class="pull-left">By <a href="http://blog.lesierse.com">Vincent Lesierse.</a></p>
+            <ul class="social-links pull-right">
+                <li><a href="https://twitter.com/vlesierse" target="_blank"><i class="icon-twitter"></i></a></li>
+                <li><a href="https://nl.linkedin.com/in/vlesierse" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="mailto://vincent@lesierse.com" target="_blank"><i class="fa fa-envelope"></i></a></li>
+            </ul>
+        </div>
+    </div>
 </footer>
