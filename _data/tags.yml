@@ -2,3 +2,9 @@
   name: ASP.NET 5
 - slug: servicefabric
   name: Service Fabric
+- slug: acs
+  name: Azure Container Service
+- slug: dcos
+  name: DCOS
+- slug: vamp
+  name: Vamp
