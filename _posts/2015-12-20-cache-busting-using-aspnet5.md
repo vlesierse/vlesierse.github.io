@@ -25,17 +25,17 @@ The next time the browser have to reach out to the server for those resources, h
 When you create an ASP.NET 5 MVC application from either to yeoman generator or Visual Studio project template it already includes the Microsoft.AspNet.StaticFiles NuGet package.
 This package has middleware for your application to serve files from disk. If you don't have the package in your project.json you can added with ease.
 
-```json
+~~~ json
 "dependencies": {
     "Microsoft.AspNet.StaticFiles": "1.0.0-rc1-final"
   },
-```
+~~~
 
 When you inject the `StaticFileMiddleware` in your request pipeline it will look for the files in the `wwwroot` folder and serves them to the clients.
 
-```csharp
+~~~ csharp
 app.UseStaticFiles();
-```
+~~~
 
 While serving the files it will add a `ETag` header to the response. This way ASP.NET 5 will optimize your application.
 
@@ -59,7 +59,7 @@ A good practice is to add a Cache-Control header with your response wich will co
 
 This is a way how to do this easily with ASP.NET 5. You can change the code in your `Startup.cs` to:
 
-```csharp
+~~~ csharp
 app.UseStaticFiles(new StaticFileOptions() {
     OnPrepareResponse = (context) => {
         var headers = context.Context.Response.GetTypedHeaders();
@@ -68,11 +68,11 @@ app.UseStaticFiles(new StaticFileOptions() {
         };
     }
 });
-```
+~~~
 
 This will solve flooding you server with HTTP requests but the problem of invalidating the cache at your users still exists. So we need to change the strategy.
 
-```
+~~~
 Accept-Ranges:bytes
 Cache-Control:max-age=86400
 Content-Length:103
@@ -81,37 +81,37 @@ Date:Sun, 20 Dec 2015 15:54:23 GMT
 ETag:"1d13b3e955769e7"
 Last-Modified:Sun, 20 Dec 2015 15:53:35 GMT
 Server:Kestrel
-```
+~~~
 
 ### Versioning
 If you are changing your resource files you could choose to version them. When the browser see the resource it is actually a different one for him because the url has been changed. Resulting that it will not try to load the resource from cache.
 It is possible to adopt all kinds of versioning strategies like symantic versioning.
 
-```html
+~~~ html
 <script src="~/js/app-1.0.js"/></script>
-```
+~~~
 
 Versioning of your files will make maintenance of your files a hell. In short, DON'T! 
 A better approach is to just change your url but keep the physical location of the resource the same.
 
-```html
+~~~ html
 <script src="~/js/app.js?v=1"/></script>
-```
+~~~
 This also will change the url and solves the caching problem, but changing the url for each change of the resource is also not really maintanable.
 
 #### asp-append-version
 There is no need for you to change the version manually. You can use the `asp-append-version` attribute on the script or link tag.
 
-```html
+~~~ html
 <script src="~/js/app.js" asp-append-version="true" /></script>
-```
+~~~
 
 MVC will generate a hash of your file at runtime and renders this to your script or link tag.
 This means when your file changes it will calculate another hash which is basically another version.
 
-```html
+~~~ html
 <script src="/js/app.js?v=J4F2S0DV72Q7OV0fi5JNlEa-uRAClFhpCCiOYMOHqMg"></script>
-```
+~~~
 
 Unfortunately there is no file watcher on this file, like ASP.NET Bundling & Minification does. ASP.NET 5 doesn't recalculate the hash when the file changes at runtime. You have to restart your application to see effect.
 
@@ -123,9 +123,9 @@ How can ASP.NET 5 discover the right files with the correct hash code?
 #### asp-src-include
 You are able to discover the files on the web server and inject the url using the `asp-src-include` attribute on the script and link tags.
 
- ```html
+~~~ html
 <script asp-src-include="~/js/app_*.js" /></script>
-```
+~~~
 
 ## Summary
 Working with resource files like javascript and css doesn't need to hard anymore. It's easy to optimize your user experience and be able to change you application often.

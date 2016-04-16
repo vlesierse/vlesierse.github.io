@@ -7,8 +7,7 @@ tags: [netcore, docker]
 comments: true
 ---
 From day one when Microsoft announced ASP.NET Core (at that time ASP.NET 5 or vNext) I was excited running my application cross platform. Especially with the power of containerized applications provided by Docker, this will be a game changer.
-
-With RC2 around corner I thought of creating a .NET CLI tool which allows you to publish your application easily to a Docker container. Not that it is difficult to do without tooling, but to make it as easy as possible for developers to their .NET Core applications with Docker containers.
+With RC2 around corner I thought of creating a .NET CLI tool which allows you to publish your application easily to a Docker container. Not that it is difficult to do without tooling, but to make it as easy as possible for developers to publish their .NET Core applications to Docker.
 
 ## Prerequisites
 
@@ -24,7 +23,7 @@ The tool will create a `Dockerfile` next to your published application and execu
 I haven't pushed to the tool to the public nuget.org feed, but when RC2 hits the shelve I definitely will do that.
 For now when you would like use the publisher you should add this myget feed to your project's `NuGet.config` file.
 
-```xml
+~~~
 <?xml version="1.0" encoding="utf-8"?>
 <configuration>
   <packageSources>
@@ -33,19 +32,19 @@ For now when you would like use the publisher you should add this myget feed to 
     ...
   </packageSources>
 </configuration>
-```
+~~~
 
 ### Change project.json
 Next, you should change your `project.json` file and add the `dotnet-publish-docker` package to `tools` and add the `dotnet publish-docker` to the post-publish script.
 
-```json
+~~~ json
 "tools": {
   "dotnet-publish-docker": "1.0.0-dev"
 },
 "scripts": {
   "postpublish": "dotnet publish-docker --base-image vlesierse/dotnet --publish-folder %publish:OutputPath%"
 }
-```
+~~~
 
 > Unfortunately the current .NET Core Docker image is an older alpha version from november 2015. Until the RC2 releases you could use `vlesierse/dotnet:latest` which has the latest version of the .NET Core.
 It's also possible to create your own base Docker image and use this as `--base-image` parameter.
@@ -53,17 +52,17 @@ It's also possible to create your own base Docker image and use this as `--base-
 ### Publish your project
 Now you're able to publish your application and you should see it creates a Docker image for your.  
 
-```bash
+~~~ bash
 dotnet publish
-```
+~~~
 
 ### Run your Docker image
 With the Docker CLI you should see your image and will be able to run it.
 
-```bash
+~~~ bash
 docker images
 docker run --rm <appname>
-```
+~~~
 
 ## .NET CLI Tools
 The .NET CLI is a great tool this allow developers to build, run, package, restore, test and publish their applications. However the extensibility model makes it even more awesome.
@@ -77,7 +76,7 @@ When you would like to create your own .NET CLI tool I have some tips and consid
 #### Publish to local NuGet feed
 Change or create the `NuGet.config` in your solution and add an entry to a local folder. This allows you to create a sample application and test out the development experience using your tool.
 
-```xml
+~~~ xml
 <?xml version="1.0" encoding="utf-8"?>
 <configuration>
   <packageSources>
@@ -86,18 +85,18 @@ Change or create the `NuGet.config` in your solution and add an entry to a local
     ...
   </packageSources>
 </configuration>
-```
+~~~
 
 If you want to publish your tool to your local feed you can simply use this command.
 
-```bash
+~~~ bash
 dotnet pack --version-suffix dev --output /Users/vlesierse/.nuget/feed
-```
+~~~
 
 #### Use the Microsoft.Extensions.CommandLineUtils
 Using this package makes it very easy to create command line applications (like .NET CLI). It help you parse the options, arguments and commands given to application. It even generates a nice help output to improve the experience.
 
-```csharp
+~~~ csharp
 var app = new CommandLineApplication
 {
     Name = "dotnet publish-docker",
@@ -116,6 +115,6 @@ app.OnExecute(() =>
 });
 
 return app.Execute(args);
-```
+~~~
 
 Please take a look a my [GitHub project](https://github.com/vlesierse/dotnet-publish-docker) any feedback is welcome.

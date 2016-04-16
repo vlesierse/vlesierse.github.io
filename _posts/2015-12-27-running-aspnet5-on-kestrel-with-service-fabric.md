@@ -26,7 +26,7 @@ If you want to do a little more, you have to work arround a couple of things.
 ## Changing the service manifest
 When you select ASP.NET 5 as option in the Service Fabric project template it will generate a `ServiceManifest.xml` file with a `<CodePackage/>` section looking like this:
 
-```xml
+~~~ xml
 <CodePackage Name="C" Version="1.0.0">
     <EntryPoint>
         <ExeHost>
@@ -37,7 +37,7 @@ When you select ASP.NET 5 as option in the Service Fabric project template it wi
         </ExeHost>
     </EntryPoint>
 </CodePackage>
-```
+~~~
 
 You would think changing `--server Microsoft.AspNet.Server.WebListener` to `--server Microsoft.AspNet.Server.Kestrel` will do the trick, right?
 Unfortunately this is not the case... It appears that as soon as you run or publish your application the service manifest will be overwritten and undo your changes.
@@ -46,13 +46,13 @@ Unfortunately this is not the case... It appears that as soon as you run or publ
 After looking around for a bit what could be responsible for this behavior, I discovered that it actually very simple to change this.
 When you edit your application's `xproj` file you will see this property group:
 
-```xml
+~~~ xml
 <PropertyGroup>
     <SchemaVersion>2.0</SchemaVersion>
     <UpdateServiceFabricManifestEnabled>true</UpdateServiceFabricManifestEnabled>
     <ServiceFabricServiceManifestPath>PackageRoot\ServiceManifest.xml</ServiceFabricServiceManifestPath>
 </PropertyGroup>
-```
+~~~
 
 *I can recommend the [Productivity Power Tools add-in for Visual Studio](<UpdateServiceFabricManifestEnabled>true</UpdateServiceFabricManifestEnabled>). It adds a nice menu option to edit your project file in Visual Studio when you right-click on the project.*
  
