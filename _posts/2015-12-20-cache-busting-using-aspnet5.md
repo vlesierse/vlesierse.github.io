@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Cache busting using ASP.NET 5"
+title:  "Cache busting using ASP.NET Core"
 author: Vincent Lesierse
 date:   2015-12-20
-tags: [aspnet5]
+tags: [aspnetcore]
 comments: true
 ---
 You are building this awesome new feature in your application's javascript code and designed a kick-ass responsive UI by using media queries in your css.
@@ -11,7 +11,7 @@ The marketing team has create a cool banner on the front page announcing this ne
 Suddenly you get calls from people asking what has happened to this new feature and why the application misbehaves. You're trying to figure out the problem but it works on your machine?!
 On you colleague's computer you see the problem. The old javascript and css files are still used and you have to tell him to clear his browser cache. How are you going to tell this to all your customers?
 
-This blogpost shows how you can load your javascript and css resources in your application using ASP.NET 5.
+This blogpost shows how you can load your javascript and css resources in your application using ASP.NET Core.
 
 ## Browsers
 The web browser has some smart tricks to optimize your user's experience using your application. Connecting to a remote server and download files takes time.
@@ -21,8 +21,8 @@ The next time the browser have to reach out to the server for those resources, h
 
 [Google's Web Fundamentals: HTTP Caching](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching)
 
-## ASP.NET 5
-When you create an ASP.NET 5 MVC application from either to yeoman generator or Visual Studio project template it already includes the Microsoft.AspNet.StaticFiles NuGet package.
+## ASP.NET Core
+When you create an ASP.NET Core MVC application from either to yeoman generator or Visual Studio project template it already includes the Microsoft.AspNet.StaticFiles NuGet package.
 This package has middleware for your application to serve files from disk. If you don't have the package in your project.json you can added with ease.
 
 ~~~ json
@@ -37,7 +37,7 @@ When you inject the `StaticFileMiddleware` in your request pipeline it will look
 app.UseStaticFiles();
 ~~~
 
-While serving the files it will add a `ETag` header to the response. This way ASP.NET 5 will optimize your application.
+While serving the files it will add a `ETag` header to the response. This way ASP.NET Core will optimize your application.
 
 ```
 Accept-Ranges:bytes
@@ -52,12 +52,12 @@ Server:Kestrel
 ### E-Tag HTTP Header
 The problem with using ETags is that the browser will always ask the server if the resource is changed. If it is still the same, the server will response with a 304 status code.
 When the resource changes, the server sends an updated version with status code 200 and a new ETag header which will be stored in the browser's cache.
-Using ETags saves you the bytes going over the network to your users but it will not cut the amount of calls. ASP.NET 5 still have to handle all those request and checks if the files are changed.
+Using ETags saves you the bytes going over the network to your users but it will not cut the amount of calls. ASP.NET Core still have to handle all those request and checks if the files are changed.
 
 ### Add Cache-Control HTTP Header
 A good practice is to add a Cache-Control header with your response wich will contain a max-age value. This will instruct the browser to use the file from cache for a certain period instead of asking the server if the file has been changed.
 
-This is a way how to do this easily with ASP.NET 5. You can change the code in your `Startup.cs` to:
+This is a way how to do this easily with ASP.NET Core. You can change the code in your `Startup.cs` to:
 
 ~~~ csharp
 app.UseStaticFiles(new StaticFileOptions() {
@@ -113,12 +113,12 @@ This means when your file changes it will calculate another hash which is basica
 <script src="/js/app.js?v=J4F2S0DV72Q7OV0fi5JNlEa-uRAClFhpCCiOYMOHqMg"></script>
 ~~~
 
-Unfortunately there is no file watcher on this file, like ASP.NET Bundling & Minification does. ASP.NET 5 doesn't recalculate the hash when the file changes at runtime. You have to restart your application to see effect.
+Unfortunately there is no file watcher on this file, like ASP.NET Bundling & Minification does. ASP.NET Core doesn't recalculate the hash when the file changes at runtime. You have to restart your application to see effect.
 
 ### Webpack, Gulp, Grunt, etc
 What about when you are adopting modern client side development techniques like building you client code using Webpack, Gulp or Grunt?
 They can great in minifing and calculate hashes after compilation/transpilation. It will save your server some time in calculate hashes because the files are already there.
-How can ASP.NET 5 discover the right files with the correct hash code?
+How can ASP.NET Core discover the right files with the correct hash code?
 
 #### asp-src-include
 You are able to discover the files on the web server and inject the url using the `asp-src-include` attribute on the script and link tags.
@@ -129,5 +129,5 @@ You are able to discover the files on the web server and inject the url using th
 
 ## Summary
 Working with resource files like javascript and css doesn't need to hard anymore. It's easy to optimize your user experience and be able to change you application often.
-ASP.NET 5 hands you some nice tag helpers which can help you with your projects.
+ASP.NET Core hands you some nice tag helpers which can help you with your projects.
  

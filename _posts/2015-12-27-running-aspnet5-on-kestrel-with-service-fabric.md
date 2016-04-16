@@ -3,7 +3,7 @@ layout: post
 title:  "Running ASP.NET 5 on Kestrel with Service Fabric"
 author: Vincent Lesierse
 date:   2015-12-27
-tags: [aspnet5, servicefabric]
+tags: [aspnetcore, servicefabric]
 comments: true
 ---
 

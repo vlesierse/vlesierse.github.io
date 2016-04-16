@@ -1,5 +1,5 @@
-- slug: aspnet5
-  name: ASP.NET 5
+- slug: aspnetcore
+  name: ASP.NET Core
 - slug: netcore
   name: .NET Core
 - slug: servicefabric
