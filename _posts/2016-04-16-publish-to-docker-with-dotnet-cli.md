@@ -6,12 +6,14 @@ date:   2016-04-16
 tags: [netcore, docker]
 comments: true
 ---
+_Updated: May 16 2016 - As .NET Core RC2 has been released some of the statements weren't valid any more._
+
 From day one when Microsoft announced ASP.NET Core (at that time ASP.NET 5 or vNext) I was excited running my application cross platform. Especially with the power of containerized applications provided by Docker, this will be a game changer.
 With RC2 around corner I thought of creating a .NET CLI tool which allows you to publish your application easily to a Docker container. Not that it is difficult to do without tooling, but to make it as easy as possible for developers to publish their .NET Core applications to Docker.
 
 ## Prerequisites
 
-- [.NET CLI](https://github.com/dotnet/cli)
+- [.NET Core](http://dot.net)
 - [Docker](https://docker.io) 
 
 ## Use the .NET Core Docker Publisher
@@ -19,50 +21,34 @@ Setting up your project to use the Docker publisher is very easy. These steps sh
 
 The tool will create a `Dockerfile` next to your published application and execute `docker build` to create an Docker image.
 
-### NuGet Feed
-I haven't pushed to the tool to the public nuget.org feed, but when RC2 hits the shelve I definitely will do that.
-For now when you would like use the publisher you should add this myget feed to your project's `NuGet.config` file.
-
-~~~
-<?xml version="1.0" encoding="utf-8"?>
-<configuration>
-  <packageSources>
-    ...
-    <add key="Lesierse" value="https://www.myget.org/F/lesierse/api/v3/index.json" />
-    ...
-  </packageSources>
-</configuration>
-~~~
-
 ### Change project.json
 Next, you should change your `project.json` file and add the `dotnet-publish-docker` package to `tools` and add the `dotnet publish-docker` to the post-publish script.
 
-~~~ json
+```json
 "tools": {
-  "dotnet-publish-docker": "1.0.0-dev"
+  "dotnet-publish-docker": "1.0.0-alpha1"
 },
 "scripts": {
-  "postpublish": "dotnet publish-docker --base-image vlesierse/dotnet --publish-folder %publish:OutputPath%"
+  "postpublish": "dotnet publish-docker --publish-folder %publish:OutputPath%"
 }
-~~~
+```
 
-> Unfortunately the current .NET Core Docker image is an older alpha version from november 2015. Until the RC2 releases you could use `vlesierse/dotnet:latest` which has the latest version of the .NET Core.
-It's also possible to create your own base Docker image and use this as `--base-image` parameter.
+> It's possible to create your own base Docker image and use this as `--base-image` parameter.
 
 ### Publish your project
 Now you're able to publish your application and you should see it creates a Docker image for your.  
 
-~~~ bash
+```bash
 dotnet publish
-~~~
+```
 
 ### Run your Docker image
 With the Docker CLI you should see your image and will be able to run it.
 
-~~~ bash
+```bash
 docker images
 docker run --rm <appname>
-~~~
+```
 
 ## .NET CLI Tools
 The .NET CLI is a great tool this allow developers to build, run, package, restore, test and publish their applications. However the extensibility model makes it even more awesome.
