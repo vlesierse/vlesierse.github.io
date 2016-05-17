@@ -6,8 +6,6 @@ date:   2016-04-16
 tags: [netcore, docker]
 comments: true
 ---
-_Updated: May 16 2016 - As .NET Core RC2 has been released some of the statements weren't valid any more._
-
 From day one when Microsoft announced ASP.NET Core (at that time ASP.NET 5 or vNext) I was excited running my application cross platform. Especially with the power of containerized applications provided by Docker, this will be a game changer.
 With RC2 around corner I thought of creating a .NET CLI tool which allows you to publish your application easily to a Docker container. Not that it is difficult to do without tooling, but to make it as easy as possible for developers to publish their .NET Core applications to Docker.
 
@@ -104,3 +102,5 @@ return app.Execute(args);
 ~~~
 
 Please take a look a my [GitHub project](https://github.com/vlesierse/dotnet-publish-docker) any feedback is welcome.
+
+- _Updated: May 16 2016 - As .NET Core RC2 has been released some of the statements weren't valid any more._
