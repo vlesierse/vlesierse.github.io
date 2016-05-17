@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Publish to Docker with the .NET CLI"
+title:  "Easy publishing to Docker with the .NET CLI"
 author: Vincent Lesierse
-date:   2016-04-16
+date:   2016-05-16
 tags: [netcore, docker]
 comments: true
 ---
