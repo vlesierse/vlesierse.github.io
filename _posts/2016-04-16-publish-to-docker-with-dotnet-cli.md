@@ -7,7 +7,7 @@ tags: [netcore, docker]
 comments: true
 ---
 From day one when Microsoft announced ASP.NET Core (at that time ASP.NET 5 or vNext) I was excited running my application cross platform. Especially with the power of containerized applications provided by Docker, this will be a game changer.
-With RC2 around corner I thought of creating a .NET CLI tool which allows you to publish your application easily to a Docker container. Not that it is difficult to do without tooling, but to make it as easy as possible for developers to publish their .NET Core applications to Docker.
+With the RTM release around corner I thought of creating a .NET CLI tool which allows you to publish your application easily to a Docker container. Not that it is difficult to do without tooling, but to make it as easy as possible for developers to publish their .NET Core applications to Docker.
 
 ## Prerequisites
 
@@ -49,7 +49,7 @@ docker run --rm <appname>
 ```
 
 ## .NET CLI Tools
-The .NET CLI is a great tool this allow developers to build, run, package, restore, test and publish their applications. However the extensibility model makes it even more awesome.
+The .NET CLI is a great tool which allows developers to build, run, package, restore, test and publish their applications. However the extensibility model makes it even more awesome.
 When you create an application which starts with `dotnet-` that the .NET CLI will use this application as command. For example, `dotnet-mycommand` is translated as `dotnet mycommand`.
 
 > Did your know that all the dotnet commands are standalone applications? There is a `dotnet-build`, `dotnet-run`, etc next to the `dotnet` executable.
