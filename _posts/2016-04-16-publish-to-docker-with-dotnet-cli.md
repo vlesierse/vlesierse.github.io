@@ -24,7 +24,7 @@ Next, you should change your `project.json` file and add the `dotnet-publish-doc
 
 ```json
 "tools": {
-  "dotnet-publish-docker": "1.0.0-alpha1"
+  "dotnet-publish-docker": "1.0.0-preview1"
 },
 "scripts": {
   "postpublish": "dotnet publish-docker --publish-folder %publish:OutputPath%"
@@ -104,3 +104,4 @@ return app.Execute(args);
 Please take a look a my [GitHub project](https://github.com/vlesierse/dotnet-publish-docker) any feedback is welcome.
 
 - _Updated: May 16 2016 - As .NET Core RC2 has been released some of the statements weren't valid any more._
+- _Updated: September 26 2016 - Change the sample to 1.0.0-preview1 which has the correct references to .NET Core 1.0._
