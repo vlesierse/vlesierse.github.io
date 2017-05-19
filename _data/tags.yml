@@ -6,3 +6,7 @@
   name: Service Fabric
 - slug: docker
   name: Docker
+- slug: exact
+  name: Exact
+- slug: devops
+  name: DevOps
