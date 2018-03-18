@@ -10,3 +10,7 @@
   name: Exact
 - slug: devops
   name: DevOps
+- slug: aws
+  name: AWS
+- slug: aws-ecs
+  name: Elastic Container Service
