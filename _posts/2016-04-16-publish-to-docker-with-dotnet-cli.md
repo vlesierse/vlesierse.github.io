@@ -11,7 +11,7 @@ With the RTM release around corner I thought of creating a .NET CLI tool which a
 
 ## Prerequisites
 
-- [.NET Core](http://dot.net)
+- [.NET Core](https://dot.net)
 - [Docker](https://docker.io) 
 
 ## Use the .NET Core Docker Publisher

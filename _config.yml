@@ -4,7 +4,7 @@ email: vincent@lesierse.com
 description: > # this means to ignore newlines until "baseurl:"
   My name is Vincent Lesierse. I'm a software architect and technology enthousiast with his head in the cloud and loves to code.
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://blog.lesierse.com" # the base hostname & protocol for your site
+url: "https://blog.lesierse.com" # the base hostname & protocol for your site
 twitter_username: vlesierse
 github_username:  vlesierse
 
