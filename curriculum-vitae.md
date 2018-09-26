@@ -1,4 +1,4 @@
-<img style="float: left; border-radius: 50%; width: 150px" src="assets/me.png">
+<img style="float: left; border-radius: 50%; width: 150px" src="me.png">
 <h1 align="center">Vincent Lesierse</h1>
 <p align="center">
 Roerdompweg 55 • 3263 AJ, Oud-Beijerland, The Netherlands</br>
@@ -6,61 +6,59 @@ vincent@lesierse.com • +31 6 52797520</br>
 blog.lesierse.com • github.com/vlesierse • vlesierse.twitter.com • linkedin.com/in/vlesierse
 </p>
 
-As a principle software architect and technology enthusiast I'm with my head in the cloud and love to code. I started out with a pasion for software engineering, but grew over years into the cloud where I love the challenges of scale and the dynamics of running software for a large set of users. I like to cover the full stack of the application. Think about composing the UI and allow the customer to have the best experience possible, communicate in a resilient and same maner or make sure the data is stored and retrieved efficiently.
-
-Most of my time I've designed and developed framework components on .NET. As fun that it is, I like to be practical as well to bring value for the customer. As a developer and architect I believe you should continuously broaden your horizon and try out various technologies, patterns and practices.
-
 ## Professional Experience
 *   **Jan. 2012 - Present**  
     **Exact** *(Fulltime)*  
     ***Principal Software Architect***
 
-    Rejoining Exact gave me the possibility to improve a product and its architecture which existed since early 2000. Exact Online is a cloud product with allows small and medium businesses to do their day to day work. With more than 400.000 companies it's the market leader of cloud business software in the Netherlands.
-
-    As a member of the Exact Online system team we have the responsibility to provide, improve and maintain the development platform for the solution teams. We made it possible to scale out the databases underneath and introduced ASP.NET MVC with Dependency Injection to support the teams in adopting domain driven design.
-
-    Because of the monolith characteristics of the product we encounter all kind of challenges regards scaling and maintainability of the product. For this reason, I started to microservices adventure with the goal to break down the monolith in smaller pieces and adopt DevOps principals and containers to the teams to enable continuous deployment. This way we can shorten the cycle to go from code to production.
-
-    Because breaking this monolith will take a while, we do need to improvements to the monolith as well. For better scalability, cost optimization and innovation we decided to move the monolith in the public cloud. After the implementation of a successful proof of concept we have chosen Amazon Web Services as our cloud and I lead the Infra & Operations team from a technical point of view to AWS using automation.
-
-    Next to this I'm also a member of the Architecture Governance Board and actively guiding other teams and helping them to make the right decisions.
-
+    - Lead the migration of Exact Online from Rackspace Managed Hosting to AWS.
+    - Introduced infrastructure as code and tooling to build and deploy infrastructure to AWS. Actively driving the roadmap for infrastructure automation and new cloud development.
+    - Guiding development teams to be successful in the cloud by providing architectural patterns & practices and DevOps tooling for supporting continuous deployment pipelines.
+    - Lead a development team in taking the first steps to migrate Exact Online from a monolithic architecture to micro services.
+    - Extended the Exact Online application framework with support of ASP.NET MVC to enable DDD and TDD for development teams.
+    - Add OAuth2 as option for 3th party developers to authenticate with Exact Online's REST API's.
+    - Various improvements to the Exact Online application framework for supporting growth of the application and development teams. Actively contributed to the roadmap of Exact Online's system team.
+    - Member of the Cloud Solutions architecture board
+    
 *   **May. 2009 - Dec. 2013**  
     **Wheel Seven**  
     ***Owner***
 
-    Wheel Seven is a cooperation between friends to launch mobile applications and games to the market.
     * **DQFS**: An internal application for providing quality report in the fruit & vegetables market using .NET and Windows Mobile. 
     * **Klaverjasblok**: A score keeping application for the card game Klaverjassen. It's written for iOS and launched to the App Store. 
-    * **Ace31**: A card game for iOS written using the Cocos2D game engine.
+    * **Ace 31**: A card game for iOS written using the Cocos2D game engine.
 
 *   **Jan. 2010 - Dec. 2011**  
     **Multicard** *(Fulltime)*  
     ***Senior Software Engineer***
-
-    Multicard was expanding their business into the payment solutions I've designed and implemented the front-end application for the customers to active and interact with their online wallet as well as the backend used for the cash registers to do their payments. We have done succesful implementations with local sport clubs and a proof of concept with the Albert Heijn. I've worked closely with the Rabobank which provided the payment services.
-
-    Another project I worked on was a mobile check-in unit for public transportation companies. It was a Android application which interacts with the cards to enable passengers to check-in and out.
-
+    
+    - Designed, implemented and productized a payment service with card management portal for consumers using NFC technology. Successfully run a proof of concept together with Albert Heijn using this payment service.  
+    - Designed and implemented an Android mobile application which allows travelers of the Dutch public transportation system to check-in/out using their NFC cards. 
+    
 *   **May 2004 - Dec. 2009**  
     **Exact** *(Fulltime)*  
-    ***Senior Software Engineer***
-
-    At Exact I grew from junior software engineer to senior research engineer in 5 years. Started out with writing a XML Import/Export components and migrating the Synergy runtime from ASP to ASP.NET. This included the technical aspect as well as transfering the project to our development center in Malaysia which means providing training and offer technical support. Over the year I grew more in a research role and was part of a team responsible for setting the direction for future application development within Exact.
-
-    We developed a service-oriented architecture with modern technologies, patterns and practices for which I build foundation in terms of security and communication. Also at the front end I did a lot work build a composable UI library to enable rapid development. For this architecture raised the Exact Identity Service. I developed the foundation of its authentication scheme which is based on federated authentication allowing Exact and partners to implement Single Sign On.
-
+    ***Senior Research Engineer***
+    
+    - Implemented a XML processing engine to support various integration scenarios of Exact products.
+    - Created and migrated system components for modernizing a classic ASP application to ASP.NET. Trained and helped development teams during the migration.
+    - Designed and implemented system and communication components for a service-oriented application. This included the data access layer, communication and front-end components.
+    - Created Exact Identity Service to supply a single sign-on solution for Exact products and federated authentication for partners.
+    
 *   **Sept 2003 - May 2004**  
     **Dimension Interactive**  
     ***Owner***
 
-    After graduation and the poor market for beginning IT professionals I started my own business for gaining experience in the field. Worked on projects for various companies like creating web sites, web applications, setting up and maintaining IT infrastructure.
+    - Created various web sites with backend applications for content management and data ingestion from other systems.
+    - Created a local broadcast solution with content creation software.
+    - Advised and implemented IT infrastructures for a travel agency.
+    - Created a booking module for a car rental company.
 
 *   **Sept. 2001 - May 2004**  
     **Tchai Multimedia** *(Internship, Partime)*  
     ***Software Engineer***
 
-    Responsible for designing and implementing multimedia based applications like interactive kiosks and information screens for instore communication purposes.
+    - Designed and implemented multimedia based solutions for well-known brands.
+    - Designed and implemented an intranet solution to improved Tchai's internal communication.
 
 
 ## Education
@@ -77,6 +75,9 @@ Most of my time I've designed and developed framework components on .NET. As fun
 *   **1994 - 1995**  
     **High School**, Juliana MAVO (Rotterdam)
 
+**Certifications**
+*   **AWS Certified Solutions Architect - Associate**
+
 ## Additional Skills
 **Languages**
 |             |                                       |              |
@@ -90,8 +91,8 @@ Most of my time I've designed and developed framework components on .NET. As fun
 | Ruby        | `puts 'Hello world'`                  | Intermediate |
 | Objective-C | `NSLog(@"Hello world");`              | Intermediate |
 | Swift       | `print('Hello world')`                | Intermediate |
+| Go          | `fmt.Println("hello world")`          | Beginning    |
 | Java        | `System.out.println("Hello, World");` | Rusty        |
-|             |                                       |              |
 | Bash        | `echo 'Hello world'`                  | Intermediate |
 | PowerShell  | `Write-Host 'Hello world'`            | Intermediate |
 
@@ -110,9 +111,16 @@ Most of my time I've designed and developed framework components on .NET. As fun
 | Big Data & AI     | AWS Glue, AWS Sagemaker                                                 |
 | Messaging         | RabbitMQ, Azure Service Bus, AWS SNS/SQS/Kinesis                        |
 | IDE               | Visual Studio Code, Visual Studio, XCode                                |
- 
-**Certifications**
-*   **AWS Certified Solutions Architect - Associate**
+
+**Noticeable Achievements**
+* Speaker at GOTO Nights 2015: [Microservices in practice at Exact](https://www.slideshare.net/slideshow/embed_code/key/3mkr6RsQgv6G5f)
+* Speaker at Microsoft TechDays 2016: [Migration to microservices in practice](https://channel9.msdn.com/Events/TechDays/Techdays-2016-The-Netherlands/Migration-to-microservices-in-practice)
+* Speaker at DHPA TechFest 2017: Infrastructure as Code at Exact
+* Speaker at Microsoft TechDays 2017: [Testing in production should be boring with containers](https://www.youtube.com/watch?v=zzrIoVf56IE)
+* Contribution to various open source projects
+    - [Cake](https://github.com/cake-build/cake)
+    - [ASP.NET Core](https://github.com/aspnet)
+    - [Homebrew](https://github.com/Homebrew/brew)
 
 ## Hobbies
 
