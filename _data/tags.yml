@@ -13,4 +13,10 @@
 - slug: aws
   name: AWS
 - slug: aws-ecs
-  name: Elastic Container Service
+  name: AWS Elastic Container Service
+- slug: aws-eks
+  name: AWS EKS
+- slug: kubernetes
+  name: Kubernetes
+- slug: azure
+  name: Azure
